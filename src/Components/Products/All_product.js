@@ -13,6 +13,14 @@ const list = [
     rating: 1,
   },
   {
+    id: "00020",
+    title: "Khaki",
+    price: 450,
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/iflexmart.appspot.com/o/mens%20cloth-%20new%20in%2F227498.jpg?alt=media&token=27458e87-2379-41ee-86f3-e5973b6aba75",
+    rating: 1,
+  },
+  {
     id: "0002",
     title: "Brushed",
     price: 300,
@@ -44,6 +52,14 @@ const list = [
       "https://firebasestorage.googleapis.com/v0/b/iflexmart.appspot.com/o/mens%20cloth-%20new%20in%2F648732.jpg?alt=media&token=d15e452e-38b0-4719-96a5-e124b449c530",
     rating: 4,
   },
+  {
+    id: "0005",
+    title: "Smart",
+    price: 1400,
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/iflexmart.appspot.com/o/mens%20cloth-%20new%20in%2F648732.jpg?alt=media&token=d15e452e-38b0-4719-96a5-e124b449c530",
+    rating: 4,
+  },
 ];
 function All_product(props) {
   // const [] = useStateValue();
@@ -51,7 +67,11 @@ function All_product(props) {
   useEffect(() => {
     if (props.searchValue) {
       list
-        .filter((prod) => prod.title === props.searchValue)
+        .filter(
+          (prod) =>
+            prod.title.toLocaleLowerCase() ===
+            props.searchValue.toLocaleLowerCase()
+        )
         .map((data) => {
           setProduct([data]);
         });
