@@ -49,7 +49,7 @@ function All_product(props) {
   // const [] = useStateValue();
   const [product, setProduct] = useState(list);
   useEffect(() => {
-    if (props.search !== " ") {
+    if (props.searchValue) {
       list
         .filter((prod) => prod.title === props.searchValue)
         .map((data) => {

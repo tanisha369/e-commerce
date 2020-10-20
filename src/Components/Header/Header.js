@@ -20,9 +20,9 @@ function Header(props) {
   // here we passed the value in to app.js
 
   useEffect(() => {
+    props.setSearch(_search);
     if (_search !== "") {
       history.push("/search");
-      props.setSearch(_search);
     }
   }, [_search]);
   // const [] = React.useState(null);
