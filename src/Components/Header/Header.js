@@ -5,7 +5,7 @@ import { Input } from "antd";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { Dropdown } from "antd";
 import { Menu } from "antd";
-import { Link, withRouter, useHistory } from "react-router-dom";
+import { Link, useHistory, withRouter } from "react-router-dom";
 import { useStateValue } from "../Reducer/StateProvider";
 
 function Header(props) {
@@ -20,10 +20,12 @@ function Header(props) {
   // here we passed the value in to app.js
 
   useEffect(() => {
-    props.setSearch(_search);
-    // history.push("/search");
+    if (_search !== "") {
+      history.push("/search");
+      props.setSearch(_search);
+    }
   }, [_search]);
-  const [] = React.useState(null);
+  // const [] = React.useState(null);
   const [, setAnchorE1] = React.useState(null);
 
   const handleClick = (event) => {

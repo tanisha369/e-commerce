@@ -22,7 +22,8 @@ function App() {
       <Switch>
         <Route exact path="/login" component={Login} />
         <Route path="/checkout">
-          <Header></Header>
+          <Header setSearch={setSearch}></Header>
+          {/* <Header></Header> */}
           <Checkout></Checkout>
         </Route>
 
@@ -31,23 +32,28 @@ function App() {
           <All_product searchValue={search} />
         </Route>
         <Route path="/womens">
-          <Header></Header>
+          <Header setSearch={setSearch}></Header>
+          {/* <Header></Header> */}
           <Product_page_womens_new></Product_page_womens_new>
         </Route>
         <Route path="/mens">
-          <Header></Header>
+          <Header setSearch={setSearch}></Header>
+          {/* <Header></Header> */}
           <Product_page_mens_new></Product_page_mens_new>
         </Route>
         <Route path="/mens-new">
-          <Header></Header>
+          <Header setSearch={setSearch}></Header>
+          {/* <Header></Header> */}
           <Product_page_mens_new></Product_page_mens_new>
         </Route>
         <Route path="/womens-new">
-          <Header></Header>
+          <Header setSearch={setSearch}></Header>
+          {/* <Header></Header> */}
           <Product_page_womens_new></Product_page_womens_new>
         </Route>
         <Route exact path="/">
-          <Header></Header>
+          <Header setSearch={setSearch}></Header>
+          {/* <Header></Header> */}
           <HomePage></HomePage>
         </Route>
       </Switch>
