@@ -1,12 +1,11 @@
-import {ShoppingBasket} from "@material-ui/icons";
-import React,{useState} from "react";
+import React from "react";
 import "./Checkout.css";
 import CheckoutProduct from "./CheckoutProduct";
 import Subtotal from "../Subtotal/Subtotal";
 import {useStateValue} from "../Reducer/StateProvider";
 
 function Checkout() {
-  const [{basket, user}, dispatch] = useStateValue();
+  const [{basket, user}] = useStateValue();
   
   return (
     <div className="checkout">

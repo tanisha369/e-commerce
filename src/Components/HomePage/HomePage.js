@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Slider from 'infinite-react-carousel';
-import {Button} from "antd";
 import Product from "../Products/Product";
 import './HomePage.css'
 
