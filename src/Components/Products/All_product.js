@@ -66,14 +66,15 @@ function All_product(props) {
   const [product, setProduct] = useState(list);
   useEffect(() => {
     if (props.searchValue) {
+      setProduct([]);
       list
-        .filter(
-          (prod) =>
-            prod.title.toLocaleLowerCase() ===
-            props.searchValue.toLocaleLowerCase()
+        .filter((prod) =>
+          prod.title
+            .toLocaleLowerCase()
+            .startsWith(props.searchValue.toLocaleLowerCase())
         )
         .map((data) => {
-          setProduct([data]);
+          setProduct((prevData) => [...prevData, data]);
         });
     } else {
       setProduct(list);
