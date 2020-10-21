@@ -66,14 +66,18 @@ function All_product(props) {
   const [product, setProduct] = useState(list);
   useEffect(() => {
     if (props.searchValue) {
+      // Removed all product from here
       setProduct([]);
       list
-        .filter((prod) =>
-          prod.title
-            .toLocaleLowerCase()
-            .startsWith(props.searchValue.toLocaleLowerCase())
+        .filter(
+          (prod) =>
+            prod.title
+              .toLocaleLowerCase()
+              .startsWith(props.searchValue.toLocaleLowerCase())
+          // searching the values
         )
         .map((data) => {
+          // itration start from here so I did take the new data and pushed
           setProduct((prevData) => [...prevData, data]);
         });
     } else {
